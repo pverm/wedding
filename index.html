@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacqueline & Pascal - Wir heiraten!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <style>
+      :root {
+        --dark-green: #5b6d3a;
+        --paper-base: #fff8f1;
+        --content-bg: #ffffff;
+        --text-color: #4a443c;
+      }
+
+      body {
+        font-family: "Quicksand", sans-serif;
+        background-color: var(--paper-base);
+        background-image:
+          radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(180, 160, 130, 0.1) 100%
+          ),
+          url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+
+      /*
+        body::after,
+        body::before {
+            content: "";
+            position: fixed;
+            transform: rotateX(180deg);
+            width: 300px;
+            height: 300px;
+            background-image: url("image_2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -2;
+        }
+
+        body::after {
+            top: 20px;
+            right: 20px;
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+
+        body::before {
+            bottom: -50px;
+            left: -50px;
+            transform: rotate(-110deg);
+        }
+        */
+
+      h2::before,
+      h2::after {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 15px;
+        background-image: url("image_2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.7;
+        /* filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(100deg)
+          saturate(100%); */
+      }
+
+      /* Den linken Lorbeer ein bisschen drehen */
+      h2::before {
+        transform: rotate(-90deg);
+      }
+
+      /* Den rechten Lorbeer spiegeln und drehen */
+      h2::after {
+        transform: rotate(90deg) scaleX(-1);
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .header-images {
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Abstand zwischen den Bildern */
+      }
+
+      .signature-img,
+      .subtitle-img {
+        max-width: 90%; /* Responsive Anpassung */
+        height: auto;
+      }
+
+      .signature-img {
+        max-height: 120px; /* Größe für "Wir heiraten!" */
+      }
+
+      .subtitle-img {
+        max-height: 80px;
+        margin-top: -10px;
+      }
+
+      .section {
+        position: relative;
+        margin-bottom: 80px;
+        padding: 60px 30px;
+        padding-top: 40px;
+        background: transparent; /* Hintergrund kommt vom ::before */
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--content-bg);
+        box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        z-index: -1; /* Hinter den Text legen */
+        background-image:
+          radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.576) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+          ),
+          url("https://www.transparenttextures.com/patterns/handmade-paper.png");
+      }
+
+      .container .section:nth-child(2)::before {
+        transform: rotate(-0.5deg);
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      }
+      .container .section:nth-child(3)::before {
+        transform: rotate(0.8deg);
+        border-radius: 20px 200px 30px 180px/150px 25px 110px 20px;
+      }
+      .container .section:nth-child(4)::before {
+        transform: rotate(-0.7deg);
+        border-radius: 180px 25px 200px 15px/20px 210px 15px 160px;
+      }
+      .container .section:nth-child(5)::before {
+        transform: rotate(0.5deg);
+        border-radius: 15px 225px 25px 255px/255px 25px 225px 15px;
+      }
+      .container .section:nth-child(6)::before {
+        transform: rotate(-1.1deg);
+        border-radius: 250px 10px 210px 20px/10px 200px 20px 240px;
+      }
+      .container .section:nth-child(7)::before {
+        transform: rotate(0.4deg);
+        border-radius: 10px 250px 20px 210px/200px 10px 240px 20px;
+      }
+
+      h2 {
+        font-weight: 600;
+        color: var(--dark-green);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 2.5px;
+        margin-bottom: 25px;
+        display: inline-block;
+        border-bottom: 2px solid rgba(91, 109, 58, 0.2);
+        padding-bottom: 8px;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 12px 0;
+        position: relative;
+      } /* Position relative hält den Text oben */
+      .highlight {
+        font-weight: 600;
+        color: var(--dark-green);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 28px;
+        border: 1.5px solid var(--dark-green);
+        color: var(--dark-green);
+        text-decoration: none;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .btn:hover {
+        background-color: var(--dark-green);
+        color: #fff;
+      }
+
+      .contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .phone-link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 40px 15px;
+        }
+        .section {
+          padding: 45px 25px;
+          margin-bottom: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-images">
+        <img src="image_0.png" alt="Wir heiraten!" class="signature-img" />
+        <img src="image_1.png" alt="Jacqueline & Pascal" class="subtitle-img" />
+      </div>
+
+      <div class="section">
+        <h2>Location & Zeit</h2>
+        <p>
+          <span class="highlight">Weingut von Othegraven</span><br />
+          Weinstraße 1, 54441 Kanzem
+        </p>
+        <p>Ankunft: 15:00 Uhr | Beginn: 15:30 Uhr</p>
+        <a
+          href="https://maps.google.com/?q=Weingut+von+Othegraven+Kanzem"
+          target="_blank"
+          class="btn"
+          >Route planen</a
+        >
+      </div>
+
+      <div class="section">
+        <h2>Anreise</h2>
+        <p>Vor Ort stehen begrenzte Parkmöglichkeiten zur Verfügung.</p>
+        <p>
+          Für eine entspannte Anreise empfehlen wir die Bahn: Der
+          <span class="highlight">Bahnhof "Kanzem"</span> ist nur 500 Meter
+          entfernt und wird regelmäßig von Zügen aus Saarburg und Trier
+          angefahren.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Übernachtung</h2>
+        <p>
+          Wir empfehlen Hotels in
+          <span class="highlight">Saarburg oder Trier</span>.
+        </p>
+        <p>
+          Alternativ finden sich sehr schöne
+          <span class="highlight">AirBnB-Unterkünfte</span> direkt in den
+          umliegenden Ortschaften.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Dresscode & Pfoten</h2>
+        <p>
+          Wir freuen uns auf ein gemeinsames Fest in <br /><span
+            class="highlight"
+            >festlich-eleganter</span
+          >
+          Garderobe.
+        </p>
+        <p>
+          <small
+            >Übrigens: Eure vierbeinigen Begleiter sind auf dem Weingut
+            ebenfalls herzlich willkommen!</small
+          >
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Rückmeldung</h2>
+        <p>Könnt ihr diesen besonderen Tag mit uns feiern?</p>
+        <p>
+          Wir bitten um eure Antwort bis zum <br /><span class="highlight"
+            >1. Juli 2026</span
+          >.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Fragen?</h2>
+        <p>Meldet euch jederzeit gerne bei uns:</p>
+        <div class="contact-grid">
+          <p>
+            Jacqueline:
+            <a href="tel:015129557509" class="phone-link">0151 29557509</a>
+          </p>
+          <p>
+            Pascal:
+            <a href="tel:015161472337" class="phone-link">0151 61472337</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
